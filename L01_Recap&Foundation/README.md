@@ -1,34 +1,54 @@
 # L01 Recap & Foundation
-<img src="Material/steve-jobs-learn-to-program.jpg">
+<a href="https://www.youtube.com/watch?v=BRTOlPdyPYU"><img src="Material/steve-jobs-learn-to-program.jpg">
 <small>Quelle: <a href="https://www.challengecharterschool.net/wp-content/uploads/2017/07/Steve-Jobs.jpg">https://www.challengecharterschool.net/wp-content/uploads/2017/07/Steve-Jobs.jpg</a></small>
 
 ## Einleitung
-In diesem Kapitel wiederholst und festigst Du einige Inhalte der Veranstaltung "Entwicklung interaktiver Anwendungen I". Ein tiefes Verständnis dieser und ein sicherer Umgang mit diesen ist Voraussetzung für die folgenden Kapitel.
-Außerdem wirst Du die Aktivitätsdiagramme der "Unified Modelling Language" (UML2.5) kennen lernen, mit deren Hilfe Du im weiteren Verlauf der Veranstaltung Algorithmen beschreiben und konzipieren wirst.
-Darüber hinaus lernst Du mit Verfolgungstabellen (Trace Tables) und dem browserinternen Debugger umzugehen, welche wichtige Werkzeuge für die Fehlersuche während der Implementation deiner konzipierten Anwendungen sind.  
+In diesem Kapitel festigst Du einige schon einige bekannte und elementare Inhalte und lernst wahrscheinlich einige weitere dazu. Ein tiefes Verständnis dieser und ein sicherer Umgang mit diesen ist Voraussetzung für die nachfolgenden Kapitel. Außerdem wirst Du die Aktivitätsdiagramme der "Unified Modelling Language" (UML2.5) kennen lernen, mit deren Hilfe Du im weiteren Verlauf der Veranstaltung Algorithmen beschreiben und konzipieren wirst. Darüber hinaus lernst Du mit Verfolgungstabellen (Trace Tables) und dem browserinternen Debugger umzugehen, welche wichtige Werkzeuge für die Fehlersuche während der Implementation deiner konzipierten Anwendungen sind.  
 
-## Rückblick
-Aus "Entwicklung interaktiver Anwendungen I" sind dir bekannt:
-- Grundlagen imperativer, prozeduraler Programmierung
-  - Anweisungen und Anweisungsfolgen
-  - Variablen und Datentypen, primitiv und komplex
-  - Kontrollstrukturen wie Bedingungen und Schleifen
-  - Funktionen und Parameter  
-- Document Object Modell
-  - Klassenhierarchie, welche die Vererbungsbeziehungen beschreibt und wie die Funktionalitäten der Elementtypen erweitert werden.
-  - Objekthierarchie der Elemente und wie damit ein Dokument beschrieben und manipuliert werden kann (Parent-Child-Relation).
-- Standard JavaScript Objects
-    - Array
-    - Math
-    - ggf. weitere
-- Standard Browser Objects
-    - Window
-    - Document
-    - ggf. weitere
-- Globale JavaScript Functions
-    - parseInt(...)
-    - parseFloat(...)
-    - ggf. weitere
+## Fehler
+> "Aargh! Mein Programm läuft nicht mehr, dabei habe ich gar nichts gemacht!"  
+
+Das kennen wir alle, Du bist nicht allein. Beachte folgende Regeln:
+1. don't panic!
+1. der Computer ist eher unkreativ und folgt nur deinen Anweisungen. Wahrscheinlich ist mit ihm oder anderer Sofware, wie dem Browser, alles in Ordnung und er kann dir helfen, den Fehler zu finden. Dabei ist er unermüdlich und wird dir nichts übel nehmen.
+1. sammle Informationen zu dem Problem. Ziehe nicht wild an allen Hebeln sondern untersuche das Verhalten. Nutze dazu die zahlreichen Hilfestellungen die der Rechner dir anzeigen kann. Wende die [Lösungstrategien](#l%C3%B6sungsstrategien) an!
+2. wenn Du das Problem nach 15 Minuten nicht gelöst hast, ruf das Dozenti oder die Tutoris! Sonst verlierst Du zu viel Zeit... falls niemand im Raum ist, schreibe einen Issue. Poste dabei die gesammelten Infos und Links auf dein Programm, sowohl auf Pages zum Probieren als auch zum Code. Wichtig: Du musst dir darüber im Klaren sein, was Du genau vorhattest. Halte dein Konzept parat!
+
+>**Hinweis:** TypeScript spielt gerade bei der Fehlervermeidung eine seiner großen Stärken aus, indem es viele Fehler zur Entwicklungszeit anzeigt. JavaScript hat hier fast nichts zu bieten, die Fehler zeigen sich erst im Betrieb... besonders gerne beim Nutzeri!
+
+### Fehlertypen
+Du hast nun schon ganz unterschiedliche Fehler kennen gelernt. Die korrekte Benennung dieser hilft anderen dabei, dir zu helfen. Ein wichtiges Unterscheidungskriterium ist dabei der Zeitpunkt, zu dem der Fehler auftritt.
+#### Runtime Error
+Tritt zur Laufzeit auf. Das ist ein hässlicher Fehlertyp, da er unter Umständen lange Zeit unentdeckt bleibt oder nur unter bestimmten Bedingungen reproduzierbar ist. Laufzeitfehler werden in der Browserkonsole angezeigt und müssen unbedingt beachtet werden, auch wenn das Programm weiterlaufen sollte.
+#### Compiletime Error
+Tritt auf, wenn das TypeScript-Programm in ein JavaScript-Programm übersetzt wird. Von diesen Fehlern wirst Du zunächst weitestgehend verschont bleiben, sofern Du dein Projekt ordentlich anlegst. Dieser Fehlertyp wird in der Konsole des Compilers, in der Regel also im VSCode-Terminal angezeigt. 
+#### Designtime Error
+Das sind Fehler, die bereits angezeigt werden während Du den Code schreibst und zwar direkt im Code selbst. In VSCode werden hierzu rote Wellenlinien im Text und rote Kästchen am Rand angezeigt. Außerdem wird in der Console der "Problem"-Tab gefüllt. So kannst Du sofort reagieren und schnell experimentieren um den Fehler zu beheben. Außerdem werden beim Zeigen mit der Maus Fehlerbeschreibungen angezeigt und per QuickFix sogar Lösungen vorgeschlagen.
+#### Logical Error
+Logikfehler sind nicht auf eine falsche Programmierung zurückzuführen, sondern auf schlechte Konzeption. Diese Fehler kann der Computer meistens gar nicht aufzeigen, da er nicht weiß, was Du eigentlich vorhattest. Solange das Programm ausführbar ist und keiner der anderen Fehlertypen auftritt, wird er es ausführen und davon ausgehen, dass er tut was Du dir vorgestellt hast. Hier hilft nur nachdenken, aber es gibt einige Hilfsmittel, die man dabei einsetzen kann!  
+
+### Lösungsstrategien
+1. Schließe die "Klassiker" aus, an denen wir alle hängen bleiben, die da z.B. sind 
+   - nicht kompiliert
+   - Script nicht in der HTML-Datei verlinkt oder eine TypeScript- statt einer JavaScript-Datei verlinkt
+   - Klammern beim Funktionsaufruf vergessen oder bei der Funktionsreferenz geschrieben
+   - falsche Datei getestet oder im falschen Ordner oder eine Kopie
+1. Lies bei Design- und Compiletime Errors aufmerksam die Hinweise, die TypeScript dir gibt, meist steht dort schon eine akkurate Beschreibung des Problems. Frag' nach, wenn Du sie nicht verstehst.
+1. Nutze den [Debugger](#debugger). Setze einen Breakpoint an die Stelle im Programm an welcher der Fehler auftritt und starte es neu. Schaue dir die Werte der Variablen an, kurz bevor der Fehler auftritt. Hilft vor allem bei Runtime Errors.
+1. Aus- und Entkommentieren: Wandle nacheinander einzelne Zeilen in Kommentare um (Windows: Strg+#, Mac: ⌘+K ⌘+U) und schaue wie sich das Programmverhalten verändert. Oder wandle ganze Blöcke von Code in einen Kommentar und entkommentiere nacheinander einzelne Zeilen wieder zu Code. Schau, wann der Fehler auftritt oder verschwindet.
+1. Lasse dir an verschiedenen Stellen Ausgaben mit sinnvollen Inhalten erzeugen per `console.log(...)`. Anhand der Folge der Ausgaben kannst Du den Programmverlauf und ggf. bestimmte Speicherzustände erkennen.
+1. Verfolge den Programmablauf mit dem Debugger, damit kommst Du auch den hartnäckigsten Fehlern auf die Schliche. Nutze Step-In, -Over und -Out.
+1. Nutze die **Gummientenmethode** bei logischen Problemen, die auch von Profis verwendet wird. Kein Witz! Platziere eine Gummiente, zur Not tut es auch ein Stofftier oder ein WG-Mitbewohneri, in deiner Nähe und schaue zusammen mit ihr auf deinen Code. Erkläre ihr im Detail, wie der Code funktioniert. Die Wahrscheinlichkeit ist groß, dass ihr dabei gemeinsam den logischen Fehler findet. Gummienten sind sehr schlau!
+
+### Präventive Maßnahmen
+Du kannst schon beim Coden dafür sorgen, dass gar nicht erst Fehler auftreten oder dass Du die Ursachen schnell findest.
+- Halte dich strikt an die Coding Guidelines, siehe [Booklet](../X01_Appendix/)
+- Teste häufig! Mache immer nur kleine Änderungen und lasse das Programm wieder laufen. Damit weißt Du, dass der Fehler gerade erst implementiert wurde.
+- Lasse dabei immer die Browserkonsole offen. Wie bei einer Krankheit erscheinen manche Fehler nicht gravierend und das Programm läuft zunächst weiter. Sie müssen aber behandelt werden!
+- Bevor Du eine Funktion implementierst, implementiere den Aufruf und einen Rumpf aus Platzhalter-Code, der vielleicht nur aus einer Konsolenausgabe besteht. Dann weißt Du, dass die übergeordnete Struktur schon passt und kannst Details implementieren. 
+- Mache häufige Commits in Git mit sinnvollen Messages und pushe sie auf dein Remote-Repository (ui...Denglisch!). Du kannst nämlich später vorangegangene Versionen wieder aufrufen und testen und alle Veränderungen nachvollziehen. So kann man genau feststellen, wann ein Fehler implementiert wurde und die Ursache schnell eingrenzen.
+
+> **Achtung:** Passe niemals dein Konzept deinen Coding-Skills an. Erweitere stattdessen deine Fähigkeiten und setze dein Konzept um. Wenn Du Zweifel hast: Frage!
 
 ## Einblick
 Ein Computer kann, sehr vereinfacht ausgedrückt, eigentlich nicht viel mehr, als Information aus einem Speicher auszulesen, sie mit einer anderen Information zu verknüpfen, beispielsweise mit Hilfe einer mathematischen Operation, und das Ergebnis wieder im Speicher abzulegen. Der Code
@@ -214,51 +234,6 @@ Ein wichtiger Unterschied zwischen primitiven und komplexen Datentypen ist die A
 - [x] Deklariere nun zwei Variablen komplexen Typs. Definiere die erste mit mehreren Elementen und nutze dann den Zuweisungsoperator genau wie oben (`v2 = v1`). Verändere ein Element der ersten Variable. Lasse beide Variablen ausgeben. Was stellst Du hier fest?  
 
 > - **Achtung:** Nicht zu beachten, dass komplexe Datentypen als Referenzen adressiert werden, mehrere Variablen also auf den gleichen Datenbestand verweisen können, ist eine häufige Fehlerquelle. Diese Referenzierung selbst aber ist kein Problem oder ein Fehler, sondern eine wichtige Grundlage für die Anwendungsentwicklung.
-
-## Fehler
-> "Aargh! Mein Programm läuft nicht mehr, dabei habe ich gar nichts gemacht!"  
-
-Das kennen wir alle, Du bist nicht allein. Beachte folgende Regeln:
-1. don't panic!
-1. der Computer ist eher unkreativ und folgt nur deinen Anweisungen. Wahrscheinlich ist mit ihm oder anderer Sofware, wie dem Browser, alles in Ordnung und er kann dir helfen, den Fehler zu finden. Dabei ist er unermüdlich und wird dir nichts übel nehmen.
-1. sammle Informationen zu dem Problem. Ziehe nicht wild an allen Hebeln sondern untersuche das Verhalten. Nutze dazu die zahlreichen Hilfestellungen die der Rechner dir anzeigen kann. Wende die [Lösungstrategien](#l%C3%B6sungsstrategien) an!
-1. wenn Du das Problem nach 15 Minuten nicht gelöst hast, schreibe einen Issue oder nimm über Discord Kontakt auf. Poste dabei die gesammelten Infos und Links auf dein Programm, sowohl auf Pages zum Probieren als auch zum Code.
-
->**Hinweis:** TypeScript spielt gerade bei der Fehlervermeidung eine seiner großen Stärken aus, indem es viele Fehler zur Entwicklungszeit anzeigt. JavaScript hat hier fast nichts zu bieten, die Fehler zeigen sich erst im Betrieb... besonders gerne beim Nutzeri!
-
-### Fehlertypen
-Du hast nun schon ganz unterschiedliche Fehler kennen gelernt. Die korrekte Benennung dieser hilft anderen dabei, dir zu helfen. Ein wichtiges Unterscheidungskriterium ist dabei der Zeitpunkt, zu dem der Fehler auftritt.
-#### Runtime Error
-Tritt zur Laufzeit auf. Das ist ein hässlicher Fehlertyp, da er unter Umständen lange Zeit unentdeckt bleibt oder nur unter bestimmten Bedingungen reproduzierbar ist. Laufzeitfehler werden in der Browserkonsole angezeigt und müssen unbedingt beachtet werden, auch wenn das Programm weiterlaufen sollte.
-#### Compiletime Error
-Tritt auf, wenn das TypeScript-Programm in ein JavaScript-Programm übersetzt wird. Von diesen Fehlern wirst Du zunächst weitestgehend verschont bleiben, sofern Du dein Projekt ordentlich anlegst. Dieser Fehlertyp wird in der Konsole des Compilers, in der Regel also im VSCode-Terminal angezeigt. 
-#### Designtime Error
-Das sind Fehler, die bereits angezeigt werden während Du den Code schreibst und zwar direkt im Code selbst. In VSCode werden hierzu rote Wellenlinien im Text und rote Kästchen am Rand angezeigt. Außerdem wird in der Console der "Problem"-Tab gefüllt. So kannst Du sofort reagieren und schnell experimentieren um den Fehler zu beheben. Außerdem werden beim Zeigen mit der Maus Fehlerbeschreibungen angezeigt und per QuickFix sogar Lösungen vorgeschlagen.
-#### Logical Error
-Logikfehler sind nicht auf eine falsche Programmierung zurückzuführen, sondern auf schlechte Konzeption. Diese Fehler kann der Computer meistens gar nicht aufzeigen, da er nicht weiß, was Du eigentlich vorhattest. Solange das Programm ausführbar ist und keiner der anderen Fehlertypen auftritt, wird er es ausführen und davon ausgehen, dass er tut was Du dir vorgestellt hast. Hier hilft nur nachdenken, aber es gibt einige Hilfsmittel, die man dabei einsetzen kann!  
-
-### Lösungsstrategien
-1. Schließe die "Klassiker" aus, an denen wir alle hängen bleiben, die da z.B. sind 
-   - nicht kompiliert
-   - Script nicht in der HTML-Datei verlinkt oder eine TypeScript- statt einer JavaScript-Datei verlinkt
-   - Klammern beim Funktionsaufruf vergessen oder bei der Funktionsreferenz geschrieben
-   - falsche Datei getestet oder im falschen Ordner oder eine Kopie
-1. Setze einen Breakpoint an die Stelle im Programm an welcher der Fehler auftritt und starte es neu. Schaue dir die Werte der Variablen an, kurz bevor der Fehler auftritt. Hilft vor allem bei Runtime Errors.
-1. Lies bei Design- und Compiletime Errors aufmerksam die Hinweise, die TypeScript dir gibt, meist steht dort schon eine akkurate Beschreibung des Problems. Frag' nach, wenn Du sie nicht verstehst.
-1. Aus- und Entkommentieren: Wandle nacheinander einzelne Zeilen in Kommentare um (Windows: Strg+#, Mac: ⌘+K ⌘+U) und schaue wie sich das Programmverhalten verändert. Oder wandle ganze Blöcke von Code in einen Kommentar und entkommentiere nacheinander einzelne Zeilen wieder zu Code. Schau, wann der Fehler auftritt oder verschwindet.
-1. Lasse dir an verschiedenen Stellen Ausgaben mit sinnvollen Inhalten erzeugen per `console.log(...)`. Anhand der Folge der Ausgaben kannst Du den Programmverlauf und ggf. bestimmte Speicherzustände erkennen.
-1. Verfolge den Programmablauf mit dem Debugger, damit kommst Du auch den hartnäckigsten Fehlern auf die Schliche. Nutze Step-In, -Over und -Out.
-1. Nutze die **Gummientenmethode** bei logischen Problemen, die auch von Profis verwendet wird. Kein Witz! Platziere eine Gummiente, zur Not tut es auch ein Stofftier oder ein WG-Mitbewohneri, in deiner Nähe und schaue zusammen mit ihr auf deinen Code. Erkläre ihr im Detail, wie der Code funktioniert. Die Wahrscheinlichkeit ist groß, dass ihr dabei gemeinsam den logischen Fehler findet. Gummienten sind sehr schlau!
-
-### Präventive Maßnahmen
-Du kannst schon beim Coden dafür sorgen, dass gar nicht erst Fehler auftreten oder dass Du die Ursachen schnell findest.
-- Halte dich strikt an die Coding Guidelines, siehe [Booklet](../X01_Appendix/)
-- Teste häufig! Mache immer nur kleine Änderungen und lasse das Programm wieder laufen. Damit weißt Du, dass der Fehler gerade erst implementiert wurde.
-- Lasse dabei immer die Browserkonsole offen. Wie bei einer Krankheit erscheinen manche Fehler nicht gravierend und das Programm läuft zunächst weiter. Sie müssen aber behandelt werden!
-- Bevor Du eine Funktion implementierst, implementiere den Aufruf und einen Rumpf aus Platzhalter-Code, der vielleicht nur aus einer Konsolenausgabe besteht. Dann weißt Du, dass die übergeordnete Struktur schon passt und kannst Details implementieren. 
-- Mache häufige Commits in Git mit sinnvollen Messages und pushe sie auf dein Remote-Repository (ui...Denglisch!). Du kannst nämlich später vorangegangene Versionen wieder aufrufen und testen und alle Veränderungen nachvollziehen. So kann man genau feststellen, wann ein Fehler implementiert wurde und die Ursache schnell eingrenzen.
-
-> **Achtung:** Passe niemals dein Konzept deinen Coding-Skills an. Erweitere stattdessen deine Fähigkeiten und setze dein Konzept um. Wenn Du Zweifel hast: Frage!
 
 ## Trace Table
 Mit Hilfe einer Verfolgungstabelle kann man den Zustand eines Programms zu jeder Zeit während des Laufs ermitteln und festhalten. Solche Tabellen von Hand zu erstellen ist eine gute Übung um den Programmlauf zu verstehen. Daher exerzieren wir dies im folgenden Video gemeinsam durch. Den Code dazu findest Du hier: [Cows.ts](../X00_Code/L01_Recap&Foundation/Cows/Cows.ts)
