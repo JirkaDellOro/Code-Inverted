@@ -1,5 +1,7 @@
 # L00_Preface  
-> **Hinweis:** In den Texten dieser Lektionen wird das geschlechtergerechte Neutrum verwendet, siehe <https://jirkadelloro.github.io/Neutrum>
+> **Hinweise:** 
+> - In den Texten dieser Lektionen wird das geschlechtergerechte Neutrum verwendet, siehe <https://jirkadelloro.github.io/Neutrum>
+> - EIA2 war ein Modul für den Studiengang Medienkonzeption. Die Lehrvideos entstammen diesem Modul und werden für Code 1 und 2 wieder verwendet. Deswegen wird teilweise auf Strukturen wie "Workshop" verwiesen, die mittlerweile das Gesamtkonzept des Studiengangs Games & Immersive Media tragen.
 
 ## Motivation  
 - [x] Klicke auf die Startsymbole und schaue dir die Videos an. Sie geben dir einen Einblick in die Möglichkeiten, die sich durch den Kurs für dich eröffnen werden, wenn Du aktiv mitarbeitest, und sie vermitteln dir, wie dringlich die Inhalte sind. Verlasse die Rolle des Konsumentis und werde zum Macheri! Du stehst am Scheideweg: wirst Du zu denen gehören, die Maschinen beherrschen, oder zu jenen, die Maschinen beherrschen? (kleines Kōan zum Meditieren)

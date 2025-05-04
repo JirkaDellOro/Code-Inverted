@@ -3,6 +3,7 @@
 [<img src="Material/EventInfo_Child2Parent.png">](https://www.youtube.com/watch?v=IHbQdC5VHfw)
 <small>Quelle: <a href="https://www.youtube.com/watch?v=IHbQdC5VHfw">https://www.youtube.com/watch?v=IHbQdC5VHfw</a></small>
 
+<!-- 
 ## Rückblick DOM
 Lädt der Browser eine Datei und versucht diese als HTML-Datei zu interpretieren, baut er anhand der Daten im Speicher ein Document-Object-Modell (DOM) auf. Was schließlich im Browserfenster angezeigt wird ist also nicht ein direktes Abbild der Datei, sondern ein Abbild dieses internen Speichermodells.
 - [x] Erzeuge eine einfache Textdatei mit der Endung ".txt" im Dateinamen und schreibe einige Worte hinein, auch mit mehreren Leerzeichenfolgen, Umlauten und Tabulatoren. Lade diese Datei im Browser und schaue dir in den Entwicklertools die Seitenstruktur an (Tab links neben Console)   
@@ -21,9 +22,10 @@ Das DOM lässt sich, wie auch z.B. die Aktivitätsdiagramme, als Graph mit Knote
 
 Diese Knoten enthalten die Kernfunktionalität zur Bildung des Graphen und damit des DOMs. Jeder Knoten kann auf einen anderen Knoten als `parentNode` verweisen und auf eine Liste von `childNodes`. Im DOM ist `document` der Wurzelknoten, der lediglich eine Referenz auf `html` in seiner Kinderliste hat. `html` referenziert über die Eigenschaft `parentNode` das `document` und hat in seiner Kinderliste Referenzen auf `head` und `body`. `body` wiederum referenziert `html` als Mama bzw Papa und hat wieder verschiedene Kindreferenzen, je nach Inhalt der darzustellenden Seite. Damit ergibt sich eine Baumstruktur, die sich in der Tiefe immer weiter verästeln kann und mit Hilfe der Entwicklertools, wie oben bereits getan, leicht einsehen lässt.
 - [x] Wähle aus deinen eigenen vorangegangenen Arbeiten eine kleine Webseite aus und stelle deren DOM grafisch dar.
+-->
 
 ## Ereignisse
-Das DOM bietet aber auch ein System für die Interaktion mit dem Nutzeri: das Eventsystem. Es stellt äußerst bequem Informationen zu Ereignissen innerhalb der Anwendung zur Verfügung, ohne dass Kenntnisse der Hardware erforderlich sind. Das Betriebssystem und der Browser werten diese Ereignisse bereits aus und bringen die Informationen darüber in eine allgemeine Form.
+Das DOM bietet ein System für die Interaktion mit dem Nutzeri: das Eventsystem. Es stellt äußerst bequem Informationen zu Ereignissen innerhalb der Anwendung zur Verfügung, ohne dass Kenntnisse der Hardware erforderlich sind. Das Betriebssystem und der Browser werten diese Ereignisse bereits aus und bringen die Informationen darüber in eine allgemeine Form.
 
 ### Event-Objekt
 Events sind spezielle Objekte, die Informationen über ein Ereignis
@@ -76,7 +78,7 @@ Hiermit wird das `window`-Objekt, welches dem Browsertab entspricht in dem die A
 - [x] Installiere den Listener am `document`-Objekt, statt am `window`-Objekt. Was geschieht nun?
 - [x] Experimentiere in der gleichen Form mit `DOMContentLoaded`, wie verhält sich das System nun?
 
-> **Hinweis:** Um die Ausführung eines Scripts zu verzögern, steht mittlerweile auch das HTML-Attribut `defer` zur Verfügung. 
+> **Hinweis:** Um die Ausführung eines Scripts zu verzögern, steht mittlerweile auch das HTML-Attribut `defer` zur Verfügung. Es ist aber guter Stil und vermeidet Seiteneffekte, weiter mit den Ereignissen zum Laden zu arbeiten. 
 
 ## Event-Phasen
 Nicht alle Ereignisse werden allen Objekten im System mitgeteilt. Es ist also nur sinnvoll dort Listener zu installieren, wo sie auch wirken können. Besonders interessant wird das Ganze bei Interaktionen, die auf DOM-Objekten ausgeführt werden, wie beispielsweise der Klick auf einen Button. Solche Ereignisse werden nämlich in drei Phasen durch den DOM-Graphen durchgereicht.
