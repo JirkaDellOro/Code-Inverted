@@ -40,24 +40,9 @@ Learning how to write isn't just for people who grow up to become writers, math 
 ## Rückblick
 Im Modul "Theory 1" hattest Du bereits fundamentale Prinzipien der Informatik und der Programmierung kennen gelernt. Du hast eine Vorstellung davon, wie ein Computer funktioniert und wie Daten kodiert und verknüpft werden. Auch hast Du dich bereits mit Algorithmen beschäftigt und Abläufe in Form von Diagrammen konzipiert. Das alles sind wichtige Grundlagen, auf denen das Modul "Code 1" aufbaut.
 
-Im Modul "Code 1" wurdest Du nun schon etwas an die praktische Anwendung heran geführt. Du hast verstanden, was ein Versionscontrollsystem wie GIT ist, warum es sinnvoll und wichtig für deine zukünftige Arbeit ist und wie Du damit umgehst. Weiterhin hast Du HTML und CSS kennen gelernt und damit experimentiert. Diese Web-Technologien stellen die Grundlage für die weiteren Schritte dar. Denn als technische Plattform dienen in "Code 1" und "Code 2" Internetbrowser, da sie auf allen gängigen Geräten zur Verfügung stehen. In diesem Zusammenhang hast Du auch schon die interne Repräsentation der Daten im "Document Object Model" (DOM) untersucht und dieses direkt manipuliert.
-
-Darüber hinaus hast Du bereits TypeScript und ein paar grundlegende Anweisungen kennen gelernt. Im Vergleich zu JavaScript, werden die verwendeten Datenstrukturen sichtbar und Du erhältst eine automatische und umfassende Hilfestellung bei der Implementation deines Codes. Auch erste Interaktionen konntest Du mit Hilfe der Ereignissteuerung umsetzen. Hierzu hast Du ein gutes Verständnis der DOM-Klassenhierarchie und des Laufzeitverhaltens erlangt.
-
-### Einblick
-Es ist erforderlich, dass die oben genannten Inhalte verinnerlicht sind und angewendet werden können, insbesondere
-- Die Arbeit mit Github und Visual Studio Code
-- Die Informationsrepräsentation im binären und hexadezimalen System
-- Die grundlegenden in JavaScript und TypeScript verwendeten Datentypen
-- Einfache und assoziative Arrays
-- Die Sprachkonstrukte imperativer Programmiersprachen: Anweisungen, Operatoren, Kontrollstrukturen, Funktionen
-- Generierung dynamischer Webseiten
-- DOM-Klassen- und Laufzeit-Hierarchie
-- Problemlösungsstrategie
-- Die Arbeit mit der Browserkonsole und Debugging im Browser
 
 ## Ausblick
-In "Code 1" lernst Du nun, auch komplizierte Aufgabenstellungen anzugehen. Dabei steht eine planvolle Vorgehensweise im Fokus. Eine gute Konzeption ist erforderlich, bevor es an die Umsetzung dieser per Code geht. Hierzu wirst Du Diagrammformen der "Unified Modelling Language" (UML) verwenden, um mit deren Hilfe Probleme zu durchdringen und Lösungen zu konzipieren. Ihre nachfolgenden Implementationen mit TypeScript stellen lediglich Nachweise der erfolgreichen Konzeption dar. Ohne ein Konzept ist es müßig mit dem Coden zu beginnen...
+In "Code 1" und "Code 2" lernst Du nun, auch komplizierte Aufgabenstellungen anzugehen. Dabei steht eine planvolle Vorgehensweise im Fokus. Eine gute Konzeption ist erforderlich, bevor es an die Umsetzung dieser per Code geht. Hierzu wirst Du Diagrammformen der "Unified Modelling Language" (UML) verwenden, um mit deren Hilfe Probleme zu durchdringen und Lösungen zu konzipieren. Ihre nachfolgenden Implementationen mit TypeScript stellen lediglich Nachweise der erfolgreichen Konzeption dar. Ohne ein Konzept ist es müßig mit dem Coden zu beginnen...
 
 Das folgende Aktivitätsdiagramm zeigt schon den Vorgang der Konzeption.   
 [Activity Diagram - Konzeption](../X01_Appendix/UML/AD_Konzeption.svg)  
@@ -76,4 +61,3 @@ besteht lediglich aus der Lektion 08 und etabliert den Canvas als neue Grundlage
 
 ### Sektion 4
 besteht aus den Lektionen 09 bis 11 und behandelt die Frage, was überhaupt diese "Objekte" sind, mit denen die ganze Zeit gearbeitet wurde, wie man solche selbst erstellt und was man damit noch machen kann. Hier öffnet sich ein intuitiver Zugang zur Entwicklung interaktiver Anwendungen, der unabhängig von Betriebssystemen, Plattformen und dergleichen ist. Mit den erlangten Kenntnissen lassen sich nicht nur klassische Websites, sondern Anwendungen in völlig anderen Bereichen planen und entwickeln, von der nativen Smartphone-App bis zu voll ausgereiften Konsolengames.
-
