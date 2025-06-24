@@ -6,7 +6,6 @@
 
 ### [L00_Preface](L00_Preface) 
 <small style="float: right; position: relative; top: -30px; height: 0px">Woche 1 | 1:15 | 1:00</small>
-- Medienkonzeption und Digitale Medien
 - Motivation
 - Veranstaltungskonzept
 - Tipps
