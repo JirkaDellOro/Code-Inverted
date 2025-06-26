@@ -205,7 +205,7 @@ Eine Funktion definierst Du mit Hilfe des Schlüsselwortes `function` gefolgt vo
 - [x] Schreibe nun `isDivisible(4, 3)`, welches Ergebnis wird angezeigt?
 - [x] Schreibe nun `isDivisible(4, 2)`, welches Ergebnis erhältst Du jetzt?
 - [x] Experimentiere mit anderen Zahlen
-- [x] Erkläre, wie die Funktion `isDivisible` arbeitet. Nutze hierzu das Kapitel "Operatoren" im [EIA2-Booklet](../X01_Appendix)
+- [x] Erkläre, wie die Funktion `isDivisible` arbeitet. Nutze hierzu das Kapitel "Operatoren" im [Booklet](../X01_Appendix)
 
 Diese JavaScript-Funktion ist sehr unsicher, sie liefert zum Beispiel auch ein Ergebnis, wenn Du `isDivisible(false, true)` aufrufst, was aber keinen Sinn ergibt. Ordentlich, nach unseren Stilregeln und etwas ausführlicher in TypeScript geschrieben, sieht die Funktion so aus:  
 
