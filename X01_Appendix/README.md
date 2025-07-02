@@ -17,17 +17,17 @@
 <img src="Img/1200px-Hochschule_Furtwangen_logo.svg.png" width="50%">
 </div>
 <div align="center">
-<h1>Entwicklung interaktiver Anwendungen</h1>
-<h2>Cheatsheet | Booklet | Excerpt</h2>
-V1.1, 10/2021<br/>
+<h1>Games & Immersive Media</h1>
+<h2>Code 1 & 2 Booklet</h2>
+V1.0, 07/2025<br/>
 Prof. Jirka Dell'Oro-Friedl<br/>
-Hochschule Furtwangen University
+Hochschule Furtwangen | The Black Forest University
 </div>
 
 <p style="page-break-after:always;"></p>  
 
 # 1. Unified Modelling Language
-Digital Media Designers need a precise and international language to create ideas and convey their designs to a team of developers. The Unified Modelling Language (UML) fulfills this requirement not only in the realm of software development, but for arbitrary complex systems. Its development started in the 1990s and is still going on. It is standardized as ISO/IEC 19505. UML makes systems, algorithms and data structures visible and tangible, thus enabling the designers and their teams to discuss, improve and produce them not only in early stages of development, but throughout the process, and, done well, even produces in large parts the final documentation.
+Game Designers and Developers need a precise and international language to create ideas and convey their designs to a team of developers. The Unified Modelling Language (UML) fulfills this requirement not only in the realm of software development, but for arbitrary complex systems. Its development started in the 1990s and is still going on. It is standardized as ISO/IEC 19505. UML makes systems, algorithms and data structures visible and tangible, thus enabling the designers and their teams to discuss, improve and produce them not only in early stages of development, but throughout the process, and, done well, even produces in large parts the final documentation.
 
 This little booklet displays only three of the many types of diagrams UML 2.5 defines:
 - Use Case Diagram
@@ -178,7 +178,9 @@ let o = {x:1, y:2};
 for (let key in o) {
   console.log(o[key]);
 }
-</pre></td></tr>
+</pre>
+The for..in loop works also with simple arrays, yielding the index as key
+</td></tr>
 </table>
 
 <p style="page-break-after:always;"></p>
@@ -188,9 +190,9 @@ for (let key in o) {
 <tr></tr>
 <tr><td><img src="UML/LoopValues.svg"/></td></tr>
 <tr><td><pre lang="typescript">
-let o = {x:1, y:2};
-for (let value of o) {
-  console.log(o);
+let a = ["Hello", "World"];
+for (let value of a) {
+  console.log(value);
 }
 </pre></td></tr>
 </table>
