@@ -159,19 +159,19 @@
 
 ## Appendix
 #### Code
-- [Github-Repository](https://github.com/JirkaDellOro/EIA2-Inverted/tree/master/X00_Code)  
+- [Github-Repository](https://github.com/JirkaDellOro/Code-Inverted/tree/master/X00_Code)  
 
 #### Booklet
 - [Online](X01_Appendix)
-- [Download PDF](https://jirkadelloro.github.io/EIA2-Inverted/X01_Appendix/EIA2-Inverted_Booklet.pdf)  
+- [Download PDF](https://jirkadelloro.github.io/Code-Inverted/X01_Appendix/Code-Inverted_Booklet.pdf)  
 
 #### eiaSteroids
 - [Dokumentation](X01_Appendix/eiaSteroids)
-- [Play](https://jirkadelloro.github.io/EIA2-Inverted/X01_Appendix/eiaSteroids/eiaSteroids.html)
+- [Play](https://jirkadelloro.github.io/Code-Inverted/X01_Appendix/eiaSteroids/eiaSteroids.html)
 
 #### Tafelbilder
-- [S20](https://github.com/JirkaDellOro/EIA2-Inverted/tree/master/X02_Notes/S20)
-- [W19](https://github.com/JirkaDellOro/EIA2-Inverted/tree/master/X02_Notes/W19) 
+- [S20](https://github.com/JirkaDellOro/Code-Inverted/tree/master/X02_Notes/S20)
+- [W19](https://github.com/JirkaDellOro/Code-Inverted/tree/master/X02_Notes/W19) 
 
 #### Scratchpad
-https://jirkadelloro.github.io/EIA2-Inverted/X01_Appendix/UML/Draw.io_UML.xml
+https://jirkadelloro.github.io/Code-Inverted/X01_Appendix/UML/Draw.io_UML.xml

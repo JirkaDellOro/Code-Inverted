@@ -2,7 +2,7 @@
  * # eiaSteroids
  * 
  * Example project demonstrating object oriented design for the course
- * Entwicklung Interaktiver Anwendungen II (EIA2) {@link https://jirkadelloro.github.io/EIA2-Inverted/}
+ * Entwicklung Interaktiver Anwendungen II (EIA2) {@link https://jirkadelloro.github.io/Code-Inverted/}
  * 
  * Project heavily inspired by Asteroids, the arcade classic created by Atari {@link https://www.atari.com/}
  * 
