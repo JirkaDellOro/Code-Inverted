@@ -162,8 +162,7 @@
 - [Github-Repository](https://github.com/JirkaDellOro/Code-Inverted/tree/master/X00_Code)  
 
 #### Booklet
-- [Online](X01_Appendix)
-- [Download PDF](https://jirkadelloro.github.io/Code-Inverted/X01_Appendix/Code-Inverted_Booklet.pdf)  
+- [Download PDF](https://jirkadelloro.github.io/Code-Inverted/X01_Appendix/Booklet.pdf))  
 
 #### eiaSteroids
 - [Dokumentation](X01_Appendix/eiaSteroids)
