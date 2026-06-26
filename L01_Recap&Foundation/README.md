@@ -158,7 +158,20 @@ Bei einem assoziativen Array werden die Elemente mit sogenannten Schlüsseln ver
 - [x] Schreibe in die Konsole `let s = {"zahl": 7, "wahr": true, text: "Hallo"}`. Lasse dir `s` ausgeben und versuche mit der Klammersyntax `s["key"]` und der Punktsyntax `s.key` auf einzelne Elemente zuzugreifen, wobei Du `key` mit der Zeichenkette ersetzt, die den Schlüssel darstellt. Was geschieht, wenn Du hier einen unbekannten Schlüssel benutzt?
 - [x] Gib ein `s[4] = [101, 102]`. Was siehst Du nun, wenn Du dir das Array ausgeben lässt? Welche Bedeutung hat die Ziffer 4 jetzt und wie kommst Du gezielt an die Information, die damit assoziiert wurde?  
 
-### Interface
+### Typ-Definitionen und Aliasse
+In TypeScript ist es möglich, neue Datentypen zu definieren. Damit kannst Du Variablen deklarieren, die mehrere Datentypen aufnehmen können, ohne gleich ganz auf explizite Typisierung verzichten und den Datentyp `any` verwenden zu müssen, der dich auf Javascript-Niveau herunterziehen würde. `prompt(...)` beispielsweise liefert ein Ergebnis vom Typ `string` zurück... oder `null`, wenn der Dialog abgebrochen wird. Um das Ergebnis einer Variablen zuweisen zu können, sollte diese also von einem Typ sein, der beides kombiniert. Dies ist ein sogenannter Union-Type und er wird kodiert, indem Du einfach die zu kombinierenden Typen mit dem Operator | verkettest. Im Beispiel kann das so aussehen:
+```typescript
+let input: string | null = prompt("Enter a number between 1 and 10", "5");
+```
+> **Hinweis:** Wenn Du den Mauszeiger in VSCode auf einem Funktionsnamen parkst, wird die Signatur und damit auch der Typ des Rückgabewerts angezeigt. Den kannst Du einfach kopieren und nutzen.
+ 
+Damit solche komplexeren Typen nicht den Lesefluss behindern, sollten Aliasse verwendet werden. Für das obige Beispiel könnte ein Alias so definiert werden:
+```typescript
+type Input = string | null;
+let input: Input = prompt("Enter a number between 1 and 10", "5");
+```
+Der neue Typ `Input` kann jetzt auch an anderen Stellen im Programm einfach genutzt werden, statt die Kombination zu wiederholen.
+
 Nicht nur die Datentypen sind heterogen, sondern auch die Schlüssel können beliebig gewählt werden. Das ermöglicht große Flexibilität, aber auch Fehler, die schwer zu finden sind. Um assoziative Arrays stringenter zu strukturieren, stellt TypeScript `interface`s zur Verfügung. Damit lassen sich Schlüssel vordefinieren und die Datentypen für Werte und Schlüssel einschränken.  
 
 Im folgenden Beispiel sind die Schlüssel frei wählbar, sind aber auf den Typ `string` beschränkt, und das Array ist auf Wahrheitswerte homogenisiert.
