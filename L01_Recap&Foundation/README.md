@@ -199,7 +199,7 @@ students.push({name: "Big Brain", matrikel: 123456, grades: {"Code1": 1.3, "Code
 >**Hinweis:** Mit Hilfe von `type` kannst Du also eigene komplexe Datentypen erschaffen. 
 
 - [x] Implementiere die Beispiele und experimentiere damit. 
-- [x] Schau dir den kompilierten JavaScript-Code an und was von deinen Interfaces übrig bleibt. Überlege was dies mit dem Unterschied von JavaScript und TypeScript zu tun hat.
+- [x] Schau dir den kompilierten JavaScript-Code an und was von deinen Typen übrig bleibt. Überlege was dies mit dem Unterschied von JavaScript und TypeScript zu tun hat.
 
 ## Funktion
 Eine Funktion ist ein Stückchen Code innerhalb eines Programms, das ein eigenes kleines Programm darstellt, einen eigenen Namen hat, eingehende Daten verarbeiten und ausgehende Daten erzeugen kann. Eine solche Funktion kann dann von anderen Programmteilen genutzt werden, indem der Name zusammen mit den zu verarbeitenden Daten aufgerufen wird. Liefert die Funktion Daten zurück, können sie zum Beispiel einfach mit Hilfe des Zuweisungsoperators `=` einer Variablen zugewiesen werden und stehen damit zur Weiterverarbeitung zur Verfügung.  
