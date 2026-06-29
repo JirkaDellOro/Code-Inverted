@@ -158,7 +158,7 @@ Bei einem assoziativen Array werden die Elemente mit sogenannten Schlüsseln ver
 - [x] Schreibe in die Konsole `let s = {"zahl": 7, "wahr": true, text: "Hallo"}`. Lasse dir `s` ausgeben und versuche mit der Klammersyntax `s["key"]` und der Punktsyntax `s.key` auf einzelne Elemente zuzugreifen, wobei Du `key` mit der Zeichenkette ersetzt, die den Schlüssel darstellt. Was geschieht, wenn Du hier einen unbekannten Schlüssel benutzt?
 - [x] Gib ein `s[4] = [101, 102]`. Was siehst Du nun, wenn Du dir das Array ausgeben lässt? Welche Bedeutung hat die Ziffer 4 jetzt und wie kommst Du gezielt an die Information, die damit assoziiert wurde?  
 
-### Typ-Definitionen und Aliasse
+### Typdefinitionen und Aliasse
 In TypeScript ist es möglich, neue Datentypen zu definieren. Damit kannst Du Variablen deklarieren, die mehrere Datentypen aufnehmen können, ohne gleich ganz auf explizite Typisierung verzichten und den Datentyp `any` verwenden zu müssen, der dich auf Javascript-Niveau herunterziehen würde. `prompt(...)` beispielsweise liefert ein Ergebnis vom Typ `string` zurück... oder `null`, wenn der Dialog abgebrochen wird. Um das Ergebnis einer Variablen zuweisen zu können, sollte diese also von einem Typ sein, der beides kombiniert. Dies ist ein sogenannter Union-Type und er wird kodiert, indem Du einfach die zu kombinierenden Typen mit dem Operator | verkettest. Im Beispiel kann das so aussehen:
 ```typescript
 let input: string | null = prompt("Enter a number between 1 and 10", "5");
@@ -172,41 +172,33 @@ let input: Input = prompt("Enter a number between 1 and 10", "5");
 ```
 Der neue Typ `Input` kann jetzt auch an anderen Stellen im Programm einfach genutzt werden, statt die Kombination zu wiederholen.
 
-Nicht nur die Datentypen sind heterogen, sondern auch die Schlüssel können beliebig gewählt werden. Das ermöglicht große Flexibilität, aber auch Fehler, die schwer zu finden sind. Um assoziative Arrays stringenter zu strukturieren, stellt TypeScript `interface`s zur Verfügung. Damit lassen sich Schlüssel vordefinieren und die Datentypen für Werte und Schlüssel einschränken.  
+Besonders hilfreich sind Typdefinitionen bei der Strukturierung komplexer Daten. Denn es können nicht nur die Typen der Element heterogen, bei assoziativen Arrays beispielsweise können auch die Schlüssel beliebig gewählt werden. Das ermöglicht große Flexibilität, aber auch Fehler, die schwer zu finden sind. Durch Typdefinitionen lassen sich Schlüssel vordefinieren und die Datentypen für Werte und Schlüssel einschränken.  
 
-Im folgenden Beispiel sind die Schlüssel frei wählbar, sind aber auf den Typ `string` beschränkt, und das Array ist auf Wahrheitswerte homogenisiert.
+Im folgenden Beispiel sind die Schlüssel vordefiniert und die zugeordneten Werte müssen von bestimmten Typen sein.
 ```typescript
-interface MapStringToBoolean {
-    [key: string]: boolean;
-}
-let a: MapStringToBoolean = {"wert1": true, "wert2": false};
-```  
-
-Im nächsten Beispiel sind die Schlüssel vordefiniert und die zugeordneten Werte müssen von bestimmten Typen sein.
-```typescript
-interface VectorWithMeaning {
-    x: number;
-    y: number;
-    meaning: string;
-}
+type VectorWithMeaning = {x: number, y: number, meaning: string};
 let vector: VectorWithMeaning = {x: 12.4, y: -7.2, meaning: "Ortsvektor"};
 ```    
-
-Beides lässt sich auch kombinieren. Das folgende Beispiel zeigt einen Aufbau, mit dem man die Notenspiegel vieler Studentis verwalten könnte und einen ersten Datensatz dafür.
+Im nächsten Beispiel sind die Schlüssel dagegen frei wählbar, sind aber auf den Typ `string` beschränkt, und das Array ist auf Wahrheitswerte homogenisiert.
 ```typescript
-interface Student {
-    name: string;
-    matrikel: number;
-    grades: {[module: string]: number};
-}
+type MapStringToBoolean = {[key: string]: boolean};
+let a: MapStringToBoolean = {"wert1": true, "wert2": false};
+```  
+Mit Hilfe dieser Definition können viele Fehler schon zur Designzeit ausgeschlossen werden und VSCode kann ggf.  bereits die richtigen Schlüssel zur Auswahl anbieten.
+
+Beide Varianten lassen sich auch kombinieren. Das folgende Beispiel zeigt einen Aufbau, mit dem man die Notenspiegel vieler Studentis verwalten könnte und einen ersten Datensatz dafür.
+```typescript
+type Student = {name: string, matrikel: number,
+    grades: {[module: string]: number}
+};
 let students: Student[] = [];
 
-students.push({name: "Big Brain", matrikel: 123456, grades: {"EIA1": 1.3, "EIA2": 1.0}});
+students.push({name: "Big Brain", matrikel: 123456, grades: {"Code1": 1.3, "Code2": 1.0}});
 ```    
 
->**Hinweis:** Mit Hilfe von Interfaces kannst Du also eigene komplexe Datentypen erschaffen. 
+>**Hinweis:** Mit Hilfe von `type` kannst Du also eigene komplexe Datentypen erschaffen. 
 
-- [x] Implementiere die Beispiel und experimentiere damit. 
+- [x] Implementiere die Beispiele und experimentiere damit. 
 - [x] Schau dir den kompilierten JavaScript-Code an und was von deinen Interfaces übrig bleibt. Überlege was dies mit dem Unterschied von JavaScript und TypeScript zu tun hat.
 
 ## Funktion
